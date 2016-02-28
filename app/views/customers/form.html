@@ -1,0 +1,32 @@
+<div>
+  <form class="form-horizontal">
+    <div class="control-group">
+      <label class="control-label">ID:</label>
+      <div class="controls">
+        <input type="text" ng-model="customer.CustomerID" class="input-small" required ng-disabled="isUpdate" name="CustomerID">
+        <span class="help-inline text-error" ng-show="form.CustomerID.$dirty && form.CustomerID.$invalid">Campo obrigatório.</span>
+      </div>
+    </div>
+    <div class="control-group">
+      <label for="" class="control-label">Company Name:</label>
+      <div class="controls">
+        <input type="text" class="input-xxlarge" ng-model="customer.CompanyName">
+      </div>
+    </div>
+    <div class="control-group">
+      <label for="" class="control-label">Contact Name:</label>
+      <div class="controls">
+        <input type="text" class="input-xxlarge" ng-model="customer.ContactName">
+      </div>
+    </div>
+    <div class="control-group">
+      <label for="" class="control-label">Telefone:</label>
+      <div class="controls"><input type="text" ng-model="customer.Phone"></div>
+    </div>
+    <div class="form-actions">
+        <button class="btn btn-primary" ng-click="save()" type="button">Salvar</button>
+        <button class="btn btn-danger pull-right" ng-click="delete()">Apagar</button>
+        <a ui-sref="customers" class="btn">Voltar</a>
+    </div>
+  </form>
+</div>
