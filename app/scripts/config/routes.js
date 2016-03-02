@@ -3,13 +3,13 @@
 angular.module('salesClient')
 .config(['$stateProvider', '$urlRouterProvider',
 function($stateProvider, $urlRouterProvider){
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/employees');
     //More about ui-router ($state): https://github.com/angular-ui/ui-router/wiki
     $stateProvider
     .state('home', {
         url: '/',
         views: {
-            main: {
+            'main': {
                 templateUrl: 'views/main.html'
             }
         }
@@ -33,11 +33,6 @@ function($stateProvider, $urlRouterProvider){
                 templateUrl: 'views/customers/form.html',
                 controller: 'CustomerFormCtrl'
             }
-        },
-        resolve: {
-            customer: function(){
-                return undefined;
-            }
         }
     })
     .state('customers.edit', {
@@ -54,6 +49,48 @@ function($stateProvider, $urlRouterProvider){
         resolve: {
             customer: ['$stateParams', 'CustomerModel', function($stateParams, CustomerModel){
                 return CustomerModel.get({id: $stateParams.CustomerID});
+            }]
+        }
+    })
+    .state('employees', {
+        url: '/employees',
+        views: {
+            'main': {
+                templateUrl: 'views/employees/main.html',
+                controller: 'EmployeeListCtrl'
+            }
+        }
+    })
+    .state('employees.add', {
+        url: '/add',
+        views: {
+            'intern@employees': {
+                templateUrl: 'views/employees/form.html',
+                controller: 'EmployeeFormCtrl'
+            }
+        },
+        resolve: {
+            employee: function(){
+                return undefined;
+            }
+        }
+    })
+    .state('employees.edit', {
+        url: '/edit',
+        views: {
+            'intern@employees': {
+                templateUrl: 'views/employees/form.html',
+                controller: 'EmployeeFormCtrl'
+            }
+        },
+        params: {
+            id: null
+        },
+        resolve: {
+            employee: ['$stateParams', 'EmployeeService', function($stateParams, EmployeeService){
+                var id = $stateParams.id || localStorage.getItem('employeeId');
+                localStorage.setItem('employeeId', id);
+                return EmployeeService.get(id);
             }]
         }
     });

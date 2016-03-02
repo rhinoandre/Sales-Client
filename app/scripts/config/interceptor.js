@@ -6,9 +6,21 @@ http://www.webdeveasy.com/interceptors-in-angularjs-and-useful-examples/
 angular.module('salesClient')
 .factory('InterceptorService', ['$injector', function($injector){
     return {
-        responseError: function(error){
+        request: function(config){
+            console.log(config);
+            return config;
+        },
+        resquestError: function(rejection){
+            return rejection;
+        },
+        response: function(response){
+            console.log('response');
+            return response;
+        },
+        responseError: function(rejection){
             var toastr = $injector.get('toastr');
-            toastr.error(error.statusText);
+            toastr.error(rejection.statusText);
+            return rejection;
         }
     };
 }])
