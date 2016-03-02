@@ -1,6 +1,6 @@
 # sales-client
 
-It was another way to develop the exemple of the book: [Livro AngularJS](https://leanpub.com/livro-angularJS)
+It was another way to develop the exemple of the book: [Livro AngularJS](https://leanpub.com/livro-angularJS)<br>
 I have used the book to learn a little more about AngularJS and since then I got more information about this amazing framework, then now I fill confortable to develop the same application but using more than the basics concepts
 
 ## Development
