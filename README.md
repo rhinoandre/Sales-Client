@@ -16,6 +16,9 @@ npm install<br>
 bower install<br>
 Run `grunt` for building and `grunt serve` for preview.
 
+##Links
+`/customers`<br>
+`/employees`
 
 ## Testing
 The tests aren't running yet, but I'll fix it
