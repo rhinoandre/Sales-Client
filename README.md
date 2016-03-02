@@ -6,10 +6,10 @@ I have used the book to learn a little more about AngularJS and since then I got
 ## Development
 
 ### Some libraries:
-ui-router (istead of router):
-$resource (istead of $http):
-angular-toastr: to send infomation to users
-ngDialog: for some interaction with users
+* `ui-router`: https://github.com/angular-ui/ui-router
+* `$resource`: https://docs.angularjs.org/api/ngResource/service/$resource
+* `angular-toastr`: https://github.com/Foxandxss/angular-toastr
+* `ngDialog`: https://github.com/likeastore/ngDialog
 
 ##Build
 To run this you'll need the backend provided by the book
