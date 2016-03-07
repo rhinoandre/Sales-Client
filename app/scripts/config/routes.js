@@ -18,27 +18,29 @@ function($stateProvider, $urlRouterProvider){
         url: '/customers',
         views: {
             'main': {
-                templateUrl: 'views/customers/main.html'
-            },
-            'innerCustomer@customers': {
-                templateUrl: 'views/customers/list.html',
+                templateUrl: 'views/customers/main.html',
                 controller: 'CustomersListCTRL'
             }
         }
     })
-    .state('customers.add', {
-        url: '/add',
+    .state('customerAdd', {
+        url: '/customer/add',
         views: {
-            'innerCustomer@customers': {
+            'main': {
                 templateUrl: 'views/customers/form.html',
                 controller: 'CustomerFormCtrl'
             }
+        },
+        resolve: {
+            customer: function(){
+                return undefined;
+            }
         }
     })
-    .state('customers.edit', {
-        url: '/edit',
+    .state('customerEdit', {
+        url: '/customer/edit',
         views: {
-            'innerCustomer@customers': {
+            'main': {
                 templateUrl: 'views/customers/form.html',
                 controller: 'CustomerFormCtrl'
             }
